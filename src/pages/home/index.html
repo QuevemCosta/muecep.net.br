@@ -28,13 +28,15 @@
 
 		<main>
 			<section class="form">
-				<form>
+				<form autocomplete="off">
 
 					<label for="uf" >Estado</label>
 					<input 
 						type="text" 
 						id="uf" 
 						name="uf" 
+						maxlength="2"
+						required
 						placeholder="Ex: SP" >
 
 					<label for="cidade" >Cidade</label>
@@ -42,6 +44,7 @@
 						type="text" 
 						id="cidade" 
 						name="cidade" 
+						required
 						placeholder="Ex: São Paulo" >
 
 					<label for="rua" >Rua</label>
@@ -50,10 +53,11 @@
 						id="rua" 
 						name="rua" 
 						placeholder="Ex: 31 de Março"
+						required
 						title="Logradouro ,Rua, Vila, Condominio, etc.."
 						 >
 
-						<button type="button" id="submit" >Buscar</button>
+						<button type="submit">Buscar</button>
 				</form>
 			</section>
 

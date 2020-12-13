@@ -1,5 +1,3 @@
-const submit = document.getElementById('submit')
-
 function removerAcentos(str) {
 
     return str.normalize("NFD").replace(/[\u0300-\u036f]/, "");
@@ -59,15 +57,12 @@ function renderData(dataApi){
 		renderData.appendChild(articleEl);
 	}
 	
-	else{
-		
-	}
 }
 function errMsg (){
 		const renderData = document.querySelector('.result');
 	
 		let divEl = document.createElement('div');
-		let contenDiv = document.createTextNode('CEP não encontrado, verifique se os dados estão corretos')
+		let contenDiv = document.createTextNode('CEP não encontrado! Verifique se os dados estão corretos')
 		
 		divEl.appendChild(contenDiv)
 
@@ -78,7 +73,6 @@ async function send(url){
 	 await fetch(url)
 	.then(response => response.json()) 
 	.then(result => { 
-	 console.log(result)
 
 	if (result.length > 0) {
 	 		result.map(function(data){
@@ -130,8 +124,12 @@ function getDataForm(){
 	const url = creatUrl(validatForm(rawData))
 	
 	send(url)
-
-	
 }
 
-submit.addEventListener('click', getDataForm, false)
+const form = document.querySelector('form')
+
+form.addEventListener('submit', function(event){
+	event.preventDefault();
+	getDataForm()
+});
+
