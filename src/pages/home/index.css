@@ -6,6 +6,7 @@
 }
 body{
 	background-color: #FFFFFF;
+	width: 100%;
 
 }
 
@@ -14,6 +15,7 @@ main{
 	margin: auto;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items:start;
 	max-width: 920px;
@@ -30,8 +32,12 @@ header{
 }
 
 h1,h2,h3,h4{
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	color: #FF5500;
+	line-height: 30px;
+}
+input, button, select, option{
+	outline: none;
 }
 .form{
 	max-width: 300px;
@@ -50,7 +56,7 @@ h1,h2,h3,h4{
 }
 .form form label{
 	font-size: 20px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	color: #57606f;
 	padding: 5px 2px;
 	margin-bottom: 10px;
@@ -59,7 +65,7 @@ h1,h2,h3,h4{
 .form form input{
 	margin-bottom: 10px;
 	color:#2f3542;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-weight: 500;
 	font-size: 16px;
 	border:none;
@@ -74,7 +80,7 @@ h1,h2,h3,h4{
 	border-radius: 5px;
 	background-color: #FF5500;
 	font-size: 20px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	cursor: pointer;
 	color: #fff;
 	padding: 10px;
@@ -87,17 +93,56 @@ h1,h2,h3,h4{
 }
 
 .result{
-	border: 1px solid #ddd;
+	border-top: 2px solid #eee;
 	padding: 20px;
+	margin-top: 10px;
+	min-width: 300px;
+	max-width: 350px;
+	max-height: 60vh;
+	overflow: scroll;
+	font-family: 'Raleway', sans-serif;
 }
 .result article{
 	border: 1px solid #ddd;
 	border-top-left-radius: 5px;
+	padding: 10px;
+	margin-bottom: 10px;
 }
-.result article span{
+.result article h2{
 	display: block;
-	color: #FF5500;
+	color: #06025A;
 	font-size: 20px;
 	font-family: 'Roboto', sans-serif;
+	line-height: 30px;
 
+}
+.result article p{
+	line-height: 30px;
+
+}
+.result article strong{
+	color: #ff5500;
+	line-height: 30px;
+
+}
+.result div{
+	border: 1px solid #ff5500;
+	border-radius: 3px;
+	color: #B23B00;
+	line-height: 25px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+ @media only screen and (max-width: 720px){
+ 	main{
+	
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+	}
+
+	.form{
+		margin-bottom: 30px;
+	}
 }
